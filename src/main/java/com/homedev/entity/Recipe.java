@@ -1,5 +1,6 @@
 package com.homedev.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -17,6 +18,7 @@ public class Recipe {
     @Column(name = "recipeName", nullable = false)
     private String nameRecipe;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "idCategory", nullable = false)
     private Category category;
@@ -30,7 +32,8 @@ public class Recipe {
     @Column(name = "photo")
     private byte[] image;
 
-    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
+    @JsonIgnore
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Ingredient> ingridientRecipe;
 
 

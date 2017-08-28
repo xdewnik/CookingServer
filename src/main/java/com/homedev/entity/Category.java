@@ -16,7 +16,7 @@ public class Category {
     private long idCategory;
 
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Recipe> recipeListCategory;
 
     @Column(name = "nameCategory")

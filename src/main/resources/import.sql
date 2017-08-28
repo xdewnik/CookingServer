@@ -1,0 +1,3 @@
+INSERT INTO cookingupserver.public.categ(idcategory, namecategory) VALUES (1,'drink'),(2,'snacks'),(3,'firstMeals'),(4,'Garnish'),(5,'Sauce');
+INSERT INTO cookingupserver.public.recipe(idrecipe, description, recipename, tutorial, idcategory) VALUES (1,'Лучший в мире напиток, слався Алах', 'Кумысыч','Берешь и делаешь мразь', 1),(2,'Лучший в мире напиток, слався Алах', 'Кумыс','Берешь и делаешь мразь', 1);
+INSERT INTO cookingupserver.public.ingredient(idingredient, ingredientname, ingridientrecipe) VALUES (1,'вода', 1), (2,'кефир',1);
